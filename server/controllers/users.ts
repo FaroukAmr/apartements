@@ -9,11 +9,11 @@ import { sign } from 'jsonwebtoken';
 
 export async function registerUser(req: Request, res: Response) {
   try {
-    const { username, password, role } = req.body;
+    const { username, password } = req.body;
     const hashedPassword = await hash(password, 10);
     await pool.query<User>(
-      'INSERT INTO users (username,password,role) VALUES ($1,$2,$3) RETURNING *',
-      [username, hashedPassword, role]
+      'INSERT INTO users (username,password) VALUES ($1,$2) RETURNING *',
+      [username, hashedPassword]
     );
 
     return res.status(201).json({
@@ -34,8 +34,6 @@ export async function loginUser(req: Request, res: Response) {
     const user: User = (req as any).user as User;
     const payload = {
       username: user.username,
-      role: user.role,
-      balanceInCents: user.balanceInCents,
     };
     const token = sign(payload, config.SECRET!);
     return res.status(200).cookie('token', token, { httpOnly: true }).json({
