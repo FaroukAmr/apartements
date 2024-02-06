@@ -7,14 +7,16 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import styles from './styles.module.css';
 import tempPic from '../../public/t.jpg';
 
 async function getApartements() {
   const response = await fetch('http://localhost:8080/apartements', {
     next: {
-      revalidate: 0,
+      revalidate: 30,
     },
   });
+
   return response.json();
 }
 
@@ -25,29 +27,43 @@ export default async function Apartements() {
       apartements = res.data;
     })
     .catch((err) => {
-      console.error(err);
+      console.error('err');
     });
   return (
-    <div className="main-container">
+    <div className={styles.mainContainer}>
       {apartements.map((apartement: Apartement) => (
-        <Card key={apartement.id} sx={{ maxWidth: 345 }}>
+        <Card
+          className={styles.card}
+          key={apartement.id}
+          sx={{ maxWidth: 345 }}
+        >
           <CardMedia
             component="img"
             sx={{ height: 140 }}
             image={tempPic.src}
-            title="green iguana"
+            title={apartement.name}
+            className={styles.cardMedia}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {apartement.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
+              {apartement.developer}
+            </Typography>
+            <Typography
+              style={{ marginTop: '20px' }}
+              variant="body1"
+              color="text.primary"
+            >
               {apartement.description}
             </Typography>
           </CardContent>
           <CardActions>
             <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
+            <Button href={`/apartements/${apartement.id}`} size="small">
+              Learn More
+            </Button>
           </CardActions>
         </Card>
       ))}
