@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS apartements(
     bedrooms INT NOT NULL,
     bathrooms INT NOT NULL,
     type VARCHAR(255) NOT NULL,
-    area INT NOT NULL,
+    area VARCHAR(255) NOT NULL,
     image VARCHAR(255),
     description TEXT NOT NULL,
     name VARCHAR(255) NOT NULL
