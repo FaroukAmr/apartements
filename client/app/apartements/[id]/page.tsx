@@ -1,5 +1,13 @@
 import { Apartement } from '@/app/models/Apartement';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import React from 'react';
+import Typography from '@mui/material/Typography';
+import styles from './styles.module.css';
+import tempPic from '../../../public/t.jpg';
 
 interface ApartementDetailsProps {
   params: { id: string };
@@ -27,9 +35,35 @@ export default async function ApartementDetails(
       console.log(error);
     });
   return (
-    <div>
-      <h1>ApartementDetails</h1>
-      {apartement.name}
-    </div>
+    <Card className={styles.card} key={apartement.id} sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        sx={{ height: 140 }}
+        image={tempPic.src}
+        title={apartement.name}
+        className={styles.cardMedia}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {apartement.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {apartement.developer}
+        </Typography>
+        <Typography
+          style={{ marginTop: '20px' }}
+          variant="body1"
+          color="text.primary"
+        >
+          {apartement.description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Share</Button>
+        <Button href={`/apartements/${apartement.id}`} size="small">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
