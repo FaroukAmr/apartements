@@ -1,4 +1,8 @@
-import { createApartement, getApartements } from '../controllers/apartements';
+import {
+  createApartement,
+  getApartement,
+  getApartements,
+} from '../controllers/apartements';
 
 import express from 'express';
 import userAuth from '../middleware/auth';
@@ -8,5 +12,6 @@ const router = express.Router();
 
 router.post('/', userAuth, validate, createApartement);
 router.get('/', userAuth, validate, getApartements);
+router.get('/:id', userAuth, validate, getApartement);
 
 export default router;

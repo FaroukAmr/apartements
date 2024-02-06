@@ -54,3 +54,24 @@ export async function getApartements(req: Request, res: Response) {
     });
   }
 }
+
+export async function getApartement(req: Request, res: Response) {
+  try {
+    const { id } = req.params;
+    const apartement = await pool.query<Apartement>(
+      'SELECT * FROM apartements WHERE id = $1',
+      [id]
+    );
+    return res.status(200).json({
+      success: true,
+      message: 'Apartement fetched successfully',
+      data: apartement.rows[0],
+    });
+  } catch (err: any) {
+    logger.error(`Failed to get apartement`, err);
+    return res.status(500).json({
+      success: false,
+      message: err.message,
+    });
+  }
+}
