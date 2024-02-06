@@ -13,7 +13,5 @@ CREATE TABLE IF NOT EXISTS apartements(
     bathrooms INT NOT NULL,
     type VARCHAR(255) NOT NULL,
     area INT NOT NULL,
+    image VARCHAR(255) NOT NULL,
 );
-
-CREATE INDEX ON products(user_id);
-
