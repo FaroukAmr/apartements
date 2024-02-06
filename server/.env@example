@@ -2,10 +2,10 @@ create .env file in root server directory and copy the following content to it, 
 
 PORT=8080
 SECRET=secret
-CLIENT_URL=http://localhost:3000 // in case you are using a web client
+CLIENT_URL=http://localhost:3000
 DB_USER=@
 DB_HOST=localhost
 DB_PASSWORD=@
 DB_PORT=5432
-DB_DATABASE_NAME=vending_machine
+DB_DATABASE_NAME=apartements
 MONGODB_URI=@
