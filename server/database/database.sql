@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS users(
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     username VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS apartements(
@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS apartements(
     bathrooms INT NOT NULL,
     type VARCHAR(255) NOT NULL,
     area INT NOT NULL,
-    image VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL
 );
