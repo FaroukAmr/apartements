@@ -10,8 +10,8 @@ import validate from '../middleware/validations';
 
 const router = express.Router();
 
-router.post('/', userAuth, validate, createApartement);
-router.get('/', userAuth, validate, getApartements);
-router.get('/:id', userAuth, validate, getApartement);
+router.post('/', validate, createApartement);
+router.get('/', validate, getApartements);
+router.get('/:id', validate, getApartement);
 
 export default router;
