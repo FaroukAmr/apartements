@@ -1,4 +1,5 @@
-import { Apartement } from './models/Apartement';
+import { Apartement } from '../models/Apartement';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 async function getApartements() {
@@ -10,7 +11,7 @@ async function getApartements() {
   return response.json();
 }
 
-export default async function ApartementsList() {
+export default async function page() {
   const response = await getApartements();
   const apartements: Apartement[] = response.data;
   console.log(apartements);
@@ -19,11 +20,13 @@ export default async function ApartementsList() {
       <h1>Apartements</h1>
       <div className={styles.apartementsContainer}>
         {apartements.map((apartement: any) => (
-          <div className={styles.apartement} key={apartement.id}>
-            <div>{apartement.name}</div>
-            <div>{apartement.description}</div>
-            <div>{apartement.price}</div>
-          </div>
+          <Link href={`/apartements/${apartement.id}`} key={apartement.id}>
+            <div className={styles.apartement}>
+              <div>{apartement.name}</div>
+              <div>{apartement.description}</div>
+              <div>{apartement.price}</div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
