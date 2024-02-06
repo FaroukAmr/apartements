@@ -1,6 +1,7 @@
 import './middleware/passport';
 import 'winston-mongodb';
 
+import apartementsRouter from './routes/apartements';
 import config from './constants';
 import cookiesParser from 'cookie-parser';
 import cors from 'cors';
@@ -31,7 +32,7 @@ export const limiter = rateLimit({
 });
 
 app.use('/users', limiter, usersRouter);
-
+app.use('/apartements', limiter, apartementsRouter);
 app.listen(config.PORT, () => {
   console.log(`Server listening on port ${config.PORT}`);
 });
