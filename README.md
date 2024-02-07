@@ -29,20 +29,14 @@ npm install
 npm run create-seed-db
 ```
 
-3. Create the db tables
-
-```sh
-npm run create-seed-db
-```
-
-4. Frontend installation
+3. Frontend installation
 
 ```sh
 cd client
 npm install
 ```
 
-5. Mobile installation
+4. Mobile installation
 
 ```sh
 cd mobile
