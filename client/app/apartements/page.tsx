@@ -40,7 +40,7 @@ export default async function Apartements() {
           <CardMedia
             component="img"
             sx={{ height: 140 }}
-            image={tempPic.src}
+            image={apartement.image ?? tempPic.src}
             title={apartement.name}
             className={styles.cardMedia}
           />
@@ -56,7 +56,7 @@ export default async function Apartements() {
               variant="body1"
               color="text.primary"
             >
-              {apartement.description}
+              E£{apartement.price.toLocaleString()}
             </Typography>
           </CardContent>
           <CardActions>
