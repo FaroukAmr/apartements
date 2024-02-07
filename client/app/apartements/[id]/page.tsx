@@ -1,8 +1,6 @@
 import { Apartement } from '@/app/models/Apartement';
 import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import React from 'react';
@@ -16,7 +14,7 @@ interface ApartementDetailsProps {
 }
 
 async function getApartement(id: string) {
-  const response = await fetch('http://localhost:8080/apartements/' + id, {
+  const response = await fetch(`${process.env.SERVER_URL}/apartements/` + id, {
     next: {
       revalidate: 3600,
     },
@@ -31,7 +29,6 @@ export default async function ApartementDetails(
   await getApartement(props.params.id)
     .then((response) => {
       apartement = response.data;
-      console.log(response);
     })
     .catch((error) => {
       console.log(error);

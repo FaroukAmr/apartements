@@ -11,7 +11,7 @@ import styles from './styles.module.css';
 import tempPic from '../../public/t.jpg';
 
 async function getApartements() {
-  const response = await fetch('http://localhost:8080/apartements', {
+  const response = await fetch(`${process.env.SERVER_URL}/apartements`, {
     next: {
       revalidate: 30,
     },
