@@ -49,6 +49,7 @@ export default async function Apartements() {
               {apartement.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
+              {apartement.area} {String.fromCharCode(183)}
               {apartement.developer}
             </Typography>
             <Typography
@@ -56,7 +57,7 @@ export default async function Apartements() {
               variant="body1"
               color="text.primary"
             >
-              E£{apartement.price.toLocaleString()}
+              {apartement.price.toLocaleString()} E£
             </Typography>
           </CardContent>
           <CardActions>
