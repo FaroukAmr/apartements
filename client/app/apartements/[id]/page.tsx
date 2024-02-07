@@ -70,10 +70,10 @@ export default async function ApartementDetails(
         </Typography>
         <Typography
           style={{ marginTop: '20px', justifySelf: 'flex-end' }}
-          variant="body1"
+          variant="h5"
           color="text.primary"
         >
-          {apartement.price.toLocaleString()} E£
+          {(apartement.price / 100).toLocaleString()} E£
         </Typography>
       </CardContent>
     </Card>

@@ -57,7 +57,7 @@ export default async function Apartements() {
               variant="body1"
               color="text.primary"
             >
-              {apartement.price.toLocaleString()} E£
+              {(apartement.price / 100).toLocaleString()} E£
             </Typography>
           </CardContent>
           <CardActions>
