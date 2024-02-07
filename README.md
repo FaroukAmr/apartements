@@ -13,7 +13,8 @@ You need to have the following installed on your machine:
 1. Clone the repository
 
 ```sh
-git clone
+git clone https://github.com/FaroukAmr/apartements.git
+cd apartements
 ```
 
 2. Backend installation
