@@ -21,7 +21,6 @@ git clone
 ```sh
 cd server
 npm install
-npm run create-seed-db
 ```
 
 **Note:** You need to setup your environment variables in a .env file in the server folder. You can use the .env.example file as a template. You also need PostgreSQL to be running.
