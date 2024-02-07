@@ -28,6 +28,7 @@ npm install
 
 ```sh
 npm run create-seed-db
+npm run dev
 ```
 
 3. Frontend installation
@@ -35,6 +36,7 @@ npm run create-seed-db
 ```sh
 cd client
 npm install
+npm run dev
 ```
 
 4. Mobile installation
@@ -42,6 +44,7 @@ npm install
 ```sh
 cd mobile
 npm install
+npm run dev
 ```
 
 **Note:** In order to be able to talk to the backend in your emulator/expo app, you need to change the `url` in the `mobile/hook/useFetch.ts` file to your local IP address. The browser works fine though.
