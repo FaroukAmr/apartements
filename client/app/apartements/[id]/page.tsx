@@ -55,7 +55,8 @@ export default async function ApartementDetails(
           </Typography>
         </div>
         <Typography variant="body2" color="text.secondary">
-          {apartement.area} {String.fromCharCode(183)} {apartement.developer}
+          {apartement.location} {String.fromCharCode(183)} {apartement.area}{' '}
+          {String.fromCharCode(183)} {apartement.developer}
         </Typography>
         <Typography
           variant="body1"
