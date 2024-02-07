@@ -33,6 +33,8 @@ const Card = ({ apartement, handleCardPress }) => {
         <Text>Bathrooms: {apartement.bathrooms}</Text>
         <Text> Bedrooms: {apartement.bedrooms}</Text>
       </View>
+
+      <Text>{(apartement.price / 100).toLocaleString()} E£</Text>
     </TouchableOpacity>
   );
 };
