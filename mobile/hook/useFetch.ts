@@ -10,7 +10,7 @@ const useFetch = (endpoint: string, query: any) => {
 
   const options = {
     method: 'GET',
-    url: `http://192.168.1.5:8080/${endpoint}`,
+    url: `http://localhost:8080/${endpoint}`, // needs to be your local IP address for testing on a physical device / emulator
   };
 
   const fetchData = async () => {
