@@ -6,7 +6,7 @@ You need to have the following installed on your machine:
 
 - [Node.js](http://nodejs.org/)
 - [PostgreSQL](https://www.postgresql.org/)
-- [MongoDB](https://www.mongodb.com/) (optional, for db logging)
+- [MongoDB](https://www.mongodb.com/) (optional, for saving logging to db)
 
 ## Installation
 
