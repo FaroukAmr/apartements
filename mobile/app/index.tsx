@@ -1,13 +1,11 @@
-import { COLORS, SIZES, icons, images } from '../constants';
-import { SafeAreaView, ScrollView, Text, View } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
+import { COLORS, SIZES, icons } from '../constants';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 
 import Apartements from '../components/Apartements';
 import ScreenHeaderBtn from '../components/ScreenHeaderBtn';
-import { useState } from 'react';
+import { Stack } from 'expo-router';
 
 const Home = () => {
-  const router = useRouter();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
@@ -17,9 +15,6 @@ const Home = () => {
           },
           headerShadowVisible: false,
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} handlePress={() => {}} />
-          ),
-          headerRight: () => (
             <ScreenHeaderBtn iconUrl={icons.menu} handlePress={() => {}} />
           ),
           headerTitle: 'Apartements App',
