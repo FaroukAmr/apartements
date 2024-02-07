@@ -61,10 +61,13 @@ curl -X POST localhost:8080/apartements
     "bathrooms": "2",
     "type": "Apartement",
     "area": "Rehab",
+    "image": "path",
     "description": "Rehab city apartement",
     "name": "Rehab city apt"
 }'
 ```
+
+**Note:** Image is nullable
 
 2. Get all apartments
 
