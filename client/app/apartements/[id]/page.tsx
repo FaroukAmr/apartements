@@ -46,9 +46,14 @@ export default async function ApartementDetails(
         className={styles.cardMedia}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {apartement.name}
-        </Typography>
+        <div className={styles.nameType}>
+          <Typography variant="h5" component="div">
+            {apartement.name}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {apartement.type}
+          </Typography>
+        </div>
         <Typography variant="body2" color="text.secondary">
           {apartement.area} {String.fromCharCode(183)} {apartement.developer}
         </Typography>
@@ -68,11 +73,7 @@ export default async function ApartementDetails(
             </span>
           </span>
         </Typography>
-        <Typography
-          style={{ marginTop: '20px', justifySelf: 'flex-end' }}
-          variant="h5"
-          color="text.primary"
-        >
+        <Typography mt={'20px'} variant="h5" color="text.primary">
           {(apartement.price / 100).toLocaleString()} E£
         </Typography>
       </CardContent>
