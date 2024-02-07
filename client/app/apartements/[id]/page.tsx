@@ -1,10 +1,12 @@
 import { Apartement } from '@/app/models/Apartement';
+import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import React from 'react';
+import ShowerOutlinedIcon from '@mui/icons-material/ShowerOutlined';
 import Typography from '@mui/material/Typography';
 import styles from './styles.module.css';
 import tempPic from '../../../public/t.jpg';
@@ -48,22 +50,32 @@ export default async function ApartementDetails(
           {apartement.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {apartement.developer}
+          {apartement.area} {String.fromCharCode(183)} {apartement.developer}
         </Typography>
         <Typography
-          style={{ marginTop: '20px' }}
+          variant="body1"
+          color="text.primary"
+          className={styles.infoContainer}
+        >
+          {apartement.description}
+
+          <span className={styles.roomsInfo}>
+            <span>
+              <BedOutlinedIcon /> {apartement.bedrooms}
+            </span>
+            <span>
+              <ShowerOutlinedIcon /> {apartement.bathrooms}
+            </span>
+          </span>
+        </Typography>
+        <Typography
+          style={{ marginTop: '20px', justifySelf: 'flex-end' }}
           variant="body1"
           color="text.primary"
         >
-          {apartement.description}
+          {apartement.price.toLocaleString()} E£
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button href={`/apartements/${apartement.id}`} size="small">
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
   );
 }
