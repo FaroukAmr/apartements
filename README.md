@@ -45,3 +45,35 @@ npm install
 ```
 
 **Note:** In order to be able to talk to the backend in your emulator/expo app, you need to change the `url` in the `mobile/hook/useFetch.ts` file to your local IP address. The browser works fine though.
+
+## Sample API requests
+
+1. Create an apartment
+
+```sh
+curl -X POST localhost:8080/apartements
+-H "Content-Type: application/json"
+-d '{
+    "price": "1000000",
+    "location": "Cairo",
+    "developer": "TMG",
+    "bedrooms": "2",
+    "bathrooms": "2",
+    "type": "Apartement",
+    "area": "Rehab",
+    "description": "Rehab city apartement",
+    "name": "Rehab city apt"
+}'
+```
+
+2. Get all apartments
+
+```sh
+curl localhost:8080/apartements
+```
+
+3. Get an apartment by id
+
+```sh
+curl localhost:8080/apartements/65dba4f2-504a-4419-9f3c-0cf0da8e76a6
+```
