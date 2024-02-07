@@ -15,7 +15,8 @@ import usersRouter from './routes/users';
 const app = express();
 app.use(express.json());
 app.use(cookiesParser());
-app.use(cors({ origin: config.CLIENT_URL, credentials: true }));
+//allow all origins
+app.use(cors());
 app.use(passport.initialize());
 
 app.use(

@@ -12,6 +12,7 @@ const config = {
   DB_PORT: process.env.DB_PORT,
   DB_DATABASE_NAME: process.env.DB_DATABASE_NAME,
   MONGODB_URI: process.env.MONGODB_URI,
+  MOBILE_URL: process.env.MOBILE_URL,
 };
 
 export default config;
